@@ -19,8 +19,7 @@ export function SiteHeader() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <CopyEmail />
+        <div className="flex flex-col items-end md:flex-row-reverse md:gap-2">
           <div className="flex items-center">
             <a
               href={siteConfig.links.githubAccount}
@@ -45,6 +44,7 @@ export function SiteHeader() {
             </a>
             <ThemeToggler />
           </div>
+          <CopyEmail />
         </div>
       </div>
     </header>
