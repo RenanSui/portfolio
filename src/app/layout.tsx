@@ -1,9 +1,9 @@
 import { siteConfig } from '@/config/site'
+import { env } from '@/env.js'
 import { fontHeading, fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import type { Metadata, Viewport } from 'next'
 import '../styles/globals.css'
-import { env } from '@/env.js'
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className="dark">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'min-h-screen bg-neutral-50 px-6 py-10 font-sans antialiased dark:bg-neutral-950 md:py-20',
           fontSans.variable,
           fontMono.variable,
           fontHeading.variable,
