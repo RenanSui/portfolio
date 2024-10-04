@@ -2,16 +2,18 @@ export const locales = ['en', 'pt-br']
 
 const links = {
   x: 'https://twitter.com/adsjksui',
-  github: 'https://github.com/renansui/portfolio',
-  githubAccount: 'https://github.com/renansui',
   discord: 'https://discord.com/users/adsk14',
+  githubAccount: 'https://github.com/renansui',
+  github: 'https://github.com/renansui/portfolio',
+  linkedin: 'https://www.linkedin.com/in/renansui/',
+  whatsapp: 'https://api.whatsapp.com/send?phone=+5571992335728&text=Hello',
 }
 
 export const siteConfig = {
   name: 'Portfolio',
-  description: 'Personal Portfolio Website',
-  url: 'https://renansui.vercel.app',
-  ogImage: 'https://renansui.vercel.app/opengraph-image.png',
   email: 'renanddtao@gmail.com',
+  url: 'https://renansui.vercel.app',
+  description: 'Personal Portfolio Website',
+  ogImage: 'https://renansui.vercel.app/opengraph-image.png',
   links,
 }
