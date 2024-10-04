@@ -3,9 +3,10 @@ import { fontHeading, fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import type { Metadata, Viewport } from 'next'
 import '../styles/globals.css'
+import { env } from '@/env.js'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://renansui.vercel.app'),
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: ['nextjs', 'react', 'react server components', 'resume', 'sanity', 'portfolio', 'nier', 'NieR:Automata'],
