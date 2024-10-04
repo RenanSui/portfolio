@@ -12,5 +12,6 @@ export const siteConfig = {
   description: 'Personal Portfolio Website',
   url: 'https://renansui.vercel.app',
   ogImage: 'https://renansui.vercel.app/opengraph-image.png',
+  email: 'renanddtao@gmail.com',
   links,
 }
