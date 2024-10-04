@@ -1,3 +1,4 @@
+import { Providers } from '@/components/providers/providers'
 import { siteConfig } from '@/config/site'
 import { env } from '@/env.js'
 import { fontHeading, fontMono, fontSans } from '@/lib/fonts'
@@ -49,16 +50,16 @@ type RootLayoutProps = { children: React.ReactNode }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-neutral-50 px-6 py-10 font-sans antialiased dark:bg-neutral-950 md:py-20',
+          'min-h-screen bg-neutral-50 px-6 py-10 font-sans antialiased transition-all dark:bg-neutral-950 md:py-20',
           fontSans.variable,
           fontMono.variable,
           fontHeading.variable,
         )}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
