@@ -5,17 +5,17 @@ import { WorkItem } from '@/components/work-item'
 
 const Projects = [
   {
-    name: 'Salvage',
-    description: 'Automated Backup Solution',
-    date: 2023,
-    url: 'https://github.com/RenanSui/salvage',
-    favorite: true,
-  },
-  {
     name: 'Spenso',
     description: 'Personal finance management tool',
     date: 2024,
     url: 'https://spenso.vercel.app',
+    favorite: true,
+  },
+  {
+    name: 'Salvage',
+    description: 'Automated Backup Solution',
+    date: 2023,
+    url: 'https://github.com/RenanSui/salvage',
     favorite: true,
   },
   {
@@ -46,7 +46,7 @@ const Projects = [
     url: 'https://ren-weatherapp.vercel.app',
     favorite: false,
   },
-].sort((a, b) => b.date - a.date)
+]
 
 export default function Home() {
   return (
