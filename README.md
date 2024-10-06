@@ -26,7 +26,7 @@ Bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/can
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/RenanSui/v4_portfolio.git
+   git clone https://github.com/RenanSui/portfolio.git
    ```
 
 2. Install dependencies using pnpm
