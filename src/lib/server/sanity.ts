@@ -1,7 +1,7 @@
 'use server'
 
 import { client } from '@/sanity/lib/client'
-import { type Projects, type Works } from '@/sanity/sanity.types'
+import { type Projects, type Resume, type Works } from '@/sanity/sanity.types'
 import { unstable_cache as cache, revalidateTag } from 'next/cache'
 
 export async function getProjects() {
@@ -53,6 +53,18 @@ export async function getWorks() {
     console.error('Failed to fetch works:', error)
     throw new Error('Unable to fetch works at this time. Please try again later.')
   }
+}
+
+export async function getResumesByLanguage(language: 'en' | 'pt-br'): Promise<Resume[]> {
+  const query = `*[_type == "resume" && language == $language]{
+    title,
+    language,
+    file {asset->{url}}
+  }`
+
+  const params = { language }
+  const resumes = await client.fetch<Resume[]>(query, params)
+  return resumes
 }
 
 export async function revalidateItems() {
