@@ -6,11 +6,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-::selection {
-  color: #e0d7d2;
-  background: #503422;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -44,6 +39,8 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --selection: 23 77% 88%;
+    --selection-text: 0 0% 14%;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -70,6 +67,8 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --selection: 23 40% 22%;
+    --selection-text: 21 18% 85%;
   }
 }
 
@@ -80,4 +79,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::selection {
+  color: hsl(var(--selection-text));
+  background: hsl(var(--selection));
 }
