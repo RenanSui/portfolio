@@ -55,7 +55,7 @@ export default function Home() {
 
       <section className="flex flex-col gap-4">
         <h1 className="font-medium">About</h1>
-        <p className="text-pretty text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-pretty text-sm text-stone-600 dark:text-stone-400">
           Passionate about crafting seamless user experiences with attention to detail. I&apos;m always sided with
           practical solutions that are both functional and aesthetically pleasing.
         </p>

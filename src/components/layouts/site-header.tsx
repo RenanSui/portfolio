@@ -15,7 +15,7 @@ export function SiteHeader() {
           </Avatar>
           <div>
             <h1 className="font-medium tracking-tight">renan</h1>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">frontend engineer</p>
+            <p className="text-sm text-stone-600 dark:text-stone-400">frontend engineer</p>
           </div>
         </div>
 
@@ -24,14 +24,14 @@ export function SiteHeader() {
             <a
               href={siteConfig.links.githubAccount}
               target="_blank"
-              className="flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-neutral-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-neutral-100"
+              className="flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-stone-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-stone-900 dark:text-stone-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-stone-100"
             >
               <Icons.github />
             </a>
             <a
               href={siteConfig.links.linkedin}
               target="_blank"
-              className="flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-neutral-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-neutral-100"
+              className="flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-stone-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-stone-900 dark:text-stone-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-stone-100"
             >
               <Icons.linkedin />
             </a>

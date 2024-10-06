@@ -24,7 +24,7 @@ export function CopyEmail() {
     <Button
       size="sm"
       variant="outline"
-      className="flex h-6 items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-100 px-2 text-xs font-medium text-neutral-600 transition-colors duration-200 ease-in-out hover:bg-neutral-200/70 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800/70 dark:hover:text-neutral-100"
+      className="flex h-6 items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-100 px-2 text-xs font-medium text-stone-600 transition-colors duration-200 ease-in-out hover:bg-neutral-200/70 hover:text-stone-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-stone-400 dark:hover:bg-neutral-800/70 dark:hover:text-stone-100"
       onClick={copyEmailToClipboard}
     >
       <span>{siteConfig.email}</span>

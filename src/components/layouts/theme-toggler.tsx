@@ -13,7 +13,7 @@ export const ThemeToggler = () => {
     return (
       <button
         className={cn(
-          'flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-neutral-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-neutral-100',
+          'flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-stone-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-stone-900 dark:text-stone-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-stone-100',
         )}
       >
         <LoaderCircleIcon className="size-5 animate-spin" />
@@ -24,7 +24,7 @@ export const ThemeToggler = () => {
     return (
       <button
         className={cn(
-          'hidden aspect-square size-7 items-center justify-center rounded-full border border-transparent text-neutral-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-neutral-100',
+          'hidden aspect-square size-7 items-center justify-center rounded-full border border-transparent text-stone-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-stone-900 dark:text-stone-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-stone-100',
           theme === 'light' && 'flex',
         )}
         onClick={() => setTheme('dark')}
@@ -38,7 +38,7 @@ export const ThemeToggler = () => {
     return (
       <button
         className={cn(
-          'hidden aspect-square size-7 items-center justify-center rounded-full border border-transparent text-neutral-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-neutral-100',
+          'hidden aspect-square size-7 items-center justify-center rounded-full border border-transparent text-stone-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-stone-900 dark:text-stone-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-stone-100',
           theme === 'dark' && 'flex',
         )}
         onClick={() => setTheme('light')}
@@ -51,7 +51,7 @@ export const ThemeToggler = () => {
   return (
     <button
       className={cn(
-        'flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-neutral-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-neutral-900 dark:text-neutral-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-neutral-100',
+        'flex aspect-square size-7 items-center justify-center rounded-full border border-transparent text-stone-600 transition-colors duration-200 ease-in-out hover:border-neutral-200 hover:bg-neutral-200/70 hover:text-stone-900 dark:text-stone-400 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 dark:hover:text-stone-100',
       )}
     >
       <LoaderCircleIcon className="size-5 animate-spin" />

@@ -18,10 +18,10 @@ export function ProjectItem({ project }: ProjectItemProps) {
           {favorite && <StarIcon className="size-4 fill-current text-amber-400 transition-all group-hover:rotate-12" />}
           {name}
         </p>
-        <p className="truncate text-neutral-600 dark:text-neutral-400">{description}</p>
+        <p className="truncate text-stone-600 dark:text-stone-400">{description}</p>
       </div>
       <div className="hidden h-px flex-1 rounded bg-neutral-600 opacity-20 dark:bg-neutral-400 md:block" />
-      <p className="w-[4ch] text-neutral-600 dark:text-neutral-400 md:text-right">{date}</p>
+      <p className="w-[4ch] text-stone-600 dark:text-stone-400 md:text-right">{date}</p>
     </a>
   )
 }

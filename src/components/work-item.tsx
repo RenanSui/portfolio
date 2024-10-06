@@ -9,9 +9,9 @@ export function WorkItem({ company, date, position }: { company: string; positio
       <div className="relative grid flex-1 gap-1 md:grid-cols-[0.25fr_1fr]">
         <p className="text-sm font-medium">{company}</p>
         <div className="flex flex-col gap-1 text-xs md:flex-row md:items-center md:gap-2">
-          <p className="text-neutral-600 dark:text-neutral-400">{position}</p>
+          <p className="text-stone-600 dark:text-stone-400">{position}</p>
           <div className="hidden size-1 rounded-full bg-neutral-600 dark:bg-neutral-400 md:block" />
-          <p className="text-neutral-600 dark:text-neutral-400">{date}</p>
+          <p className="text-stone-600 dark:text-stone-400">{date}</p>
         </div>
       </div>
     </div>
