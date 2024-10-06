@@ -3,8 +3,10 @@ import { siteConfig } from '@/config/site'
 import { env } from '@/env.js'
 import { fontHeading, fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import type { Metadata, Viewport } from 'next'
+import { type Metadata, type Viewport } from 'next'
 import '../styles/globals.css'
+
+type RootLayoutProps = { children: React.ReactNode }
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -46,11 +48,9 @@ export const viewport: Viewport = {
   ],
 }
 
-type RootLayoutProps = { children: React.ReactNode }
-
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={cn(
           'min-h-screen bg-stone-50 font-sans antialiased transition-all dark:bg-stone-950',
