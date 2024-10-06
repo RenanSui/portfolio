@@ -2,7 +2,6 @@
 
 import { client } from '@/sanity/lib/client'
 import { type Projects, type Resume, type Works } from '@/sanity/sanity.types'
-import { type Locale } from '@/types'
 import { unstable_cache as cache, revalidateTag } from 'next/cache'
 
 export async function getProjects() {
