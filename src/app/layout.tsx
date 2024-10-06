@@ -53,7 +53,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-neutral-50 px-6 py-10 font-sans antialiased transition-all dark:bg-neutral-950 md:py-20',
+          'min-h-screen bg-stone-50 font-sans antialiased transition-all dark:bg-stone-950',
           fontSans.variable,
           fontMono.variable,
           fontHeading.variable,
