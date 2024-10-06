@@ -2,6 +2,7 @@
 
 import { client } from '@/sanity/lib/client'
 import { type Projects, type Resume, type Works } from '@/sanity/sanity.types'
+import { type Locale } from '@/types'
 import { unstable_cache as cache, revalidateTag } from 'next/cache'
 
 export async function getProjects() {
@@ -55,16 +56,19 @@ export async function getWorks() {
   }
 }
 
-export async function getResumesByLanguage(language: 'en' | 'pt-br'): Promise<Resume[]> {
-  const query = `*[_type == "resume" && language == $language]{
+export async function getResumeByName(name: string): Promise<Resume | null> {
+  const query = `*[_type == "resume" && title match $name][0]{
     title,
     language,
     file {asset->{url}}
   }`
 
-  const params = { language }
-  const resumes = await client.fetch<Resume[]>(query, params)
-  return resumes
+  const params = {
+    name: `*${name}*`, // Using wildcard to match any title containing the name
+  }
+
+  const resume = await client.fetch<Resume | null>(query, params)
+  return resume
 }
 
 export async function revalidateItems() {
