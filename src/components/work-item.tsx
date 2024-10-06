@@ -1,8 +1,16 @@
+import { type Works } from '@/sanity/sanity.types'
 import { Building2Icon } from 'lucide-react'
 
-export function WorkItem({ company, date, position }: { company: string; position: string; date: string }) {
+type WorkItemProps = {
+  company: Works['company']
+  position: Works['position']
+  date: Works['workPeriod']
+}
+
+export function WorkItem({ company, date, position }: WorkItemProps) {
   return (
-    <div className="group relative -mx-4 flex gap-2 rounded-md border border-transparent px-4 py-3 transition-colors duration-150 ease-in-out hover:border-neutral-200 hover:bg-neutral-100 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 md:items-center">
+    <div className="group relative -mx-4 flex cursor-default gap-2 rounded-md border border-transparent px-4 py-3 transition-colors duration-150 ease-in-out hover:border-neutral-200 hover:bg-neutral-100 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 md:items-center">
+      <h2 className="sr-only">{company}</h2>
       <div className="flex size-8 items-center justify-center rounded-lg bg-neutral-200/50 transition-colors duration-150 ease-in-out group-hover:bg-neutral-200 dark:bg-neutral-900 dark:group-hover:bg-neutral-800">
         <Building2Icon className="size-4" />
       </div>
