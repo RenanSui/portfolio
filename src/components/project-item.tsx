@@ -1,12 +1,18 @@
 import { type Projects } from '@/sanity/sanity.types'
+import { type Locale } from '@/types'
 import { StarIcon } from 'lucide-react'
 
 type ProjectItemProps = {
   project: Projects
+  currentLanguage: Locale // Pass the current language as a prop
 }
 
-export function ProjectItem({ project }: ProjectItemProps) {
-  const { description, isFavorite, url, name, year } = project
+export function ProjectItem({ project, currentLanguage = 'en' }: ProjectItemProps) {
+  const { descriptions, isFavorite, url, name, year } = project
+
+  const description =
+    descriptions?.find((desc) => desc.language === currentLanguage)?.description ||
+    'Description not available in this language'
 
   return (
     <a
