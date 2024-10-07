@@ -9,11 +9,21 @@
 
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../../sanity.config'
+import RevalidateModal from './_components/revalidate-modal'
 
 export const dynamic = 'force-static'
 
 export { metadata, viewport } from 'next-sanity/studio'
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return (
+    <main className="relative flex flex-col md:flex-row">
+      <div className="absolute bottom-2 left-2 z-[100001]">
+        <RevalidateModal />
+      </div>
+      <div className="flex-1">
+        <NextStudio config={config} />
+      </div>
+    </main>
+  )
 }
