@@ -8,11 +8,15 @@
         "description": "Focado em desenvolver interfaces funcionais e eficientes, com atenção aos detalhes e à usabilidade. Busco sempre soluções práticas que aliem funcionalidade e design de forma equilibrada."
       },
       "works": {
-        "title": "Experiência",
+        "title": "Trabalhos",
         "description": ""
       },
       "projects": {
         "title": "Projetos",
+        "description": ""
+      },
+      "languages": {
+        "title": "Idiomas",
         "description": ""
       }
     }
