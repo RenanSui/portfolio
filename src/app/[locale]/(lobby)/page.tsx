@@ -26,7 +26,7 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           target="_blank"
           rel="noopener noreferrer"
           className="group/link group relative -mx-4 flex gap-2 rounded-md border border-transparent px-4 py-3 transition-colors duration-150 ease-in-out hover:border-neutral-200 hover:bg-neutral-100 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 md:items-center"
-          href="/resume"
+          href={`/${locale}/resume`}
         >
           <p className="flex max-w-[80ch] gap-2 truncate text-sm font-medium">{message.resumeButton}</p>
           <Icons.externalLink className="ml-1 inline-block size-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none" />
@@ -46,6 +46,17 @@ export default async function Home({ params: { locale } }: { params: { locale: L
           {projects.map((project, index) => (
             <ProjectItem key={index} project={project} currentLanguage={locale} />
           ))}
+        </div>
+      </Section>
+
+      <Section title={message.languages.title}>
+        <div className="flex flex-col gap-1 text-sm text-stone-600 dark:text-stone-400">
+          <Link href="en" className="w-fit transition-all hover:text-stone-900 dark:hover:text-stone-100">
+            English
+          </Link>
+          <Link href="pt-br" className="w-fit transition-all hover:text-stone-900 dark:hover:text-stone-100">
+            Portuguese
+          </Link>
         </div>
       </Section>
     </main>
