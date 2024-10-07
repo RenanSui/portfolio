@@ -13,7 +13,10 @@ export async function getProjects() {
             "id": _id,
             name,
             year,
-            description,
+            descriptions[] {
+              language,
+              description
+            },
             url,
             isFavorite,
           }`
@@ -56,21 +59,39 @@ export async function getWorks() {
 }
 
 export async function getResumeByName(name: string): Promise<Resume | null> {
-  const query = `*[_type == "resume" && title match $name][0]{
-    title,
-    language,
-    file {asset->{url}}
-  }`
+  try {
+    return await cache(
+      async () => {
+        const query = `*[_type == "resume" && title match $name][0]{
+          title,
+          language,
+          file {asset->{url}}
+        }`
 
-  const params = {
-    name: `*${name}*`, // Using wildcard to match any title containing the name
+        const params = {
+          name: `*${name}*`, // Using wildcard to match any title containing the name
+        }
+
+        const resume = await client.fetch<Resume | null>(query, params)
+        return resume
+      },
+      ['resume', name], // Cache key, including name for uniqueness
+      { revalidate: false, tags: ['resume'] }, // Cache options
+    )()
+  } catch (error) {
+    console.error('Failed to fetch resume:', error)
+    throw new Error('Unable to fetch resume at this time. Please try again later.')
   }
-
-  const resume = await client.fetch<Resume | null>(query, params)
-  return resume
 }
 
-export async function revalidateItems() {
+export async function revalidateProjects() {
   revalidateTag('projects')
+}
+
+export async function revalidateWorks() {
   revalidateTag('works')
+}
+
+export async function revalidateResumes() {
+  revalidateTag('resume')
 }
