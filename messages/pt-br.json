@@ -1,6 +1,20 @@
 {
   "HomePage": {
-    "title": "Olá mundo!",
-    "about": "Ir para a página sobre."
+    "career": "frontend engineer",
+    "resumeButton": "Ver currículo completo",
+    "sections": {
+      "about": {
+        "title": "Sobre",
+        "description": "Focado em desenvolver interfaces funcionais e eficientes, com atenção aos detalhes e à usabilidade. Busco sempre soluções práticas que aliem funcionalidade e design de forma equilibrada."
+      },
+      "works": {
+        "title": "Experiência",
+        "description": ""
+      },
+      "projects": {
+        "title": "Projetos",
+        "description": ""
+      }
+    }
   }
 }
