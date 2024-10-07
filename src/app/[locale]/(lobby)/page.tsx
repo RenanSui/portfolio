@@ -6,9 +6,12 @@ import { WorkItem } from '@/components/work-item'
 import { getMessage } from '@/lib/server/intl'
 import { getProjects, getWorks } from '@/lib/server/sanity'
 import { type Locale } from '@/types'
+import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 
 export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
+  setRequestLocale(locale)
+
   const projects = await getProjects()
   const works = await getWorks()
   const message = await getMessage(locale)

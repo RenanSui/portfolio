@@ -1,8 +1,10 @@
 import { locales } from '@/config/site'
 import { getResumeByName } from '@/lib/server/sanity'
 import { type Locale } from '@/types'
+import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 
 export default async function ResumePage({ params: { locale } }: { params: { locale: Locale } }) {
+  setRequestLocale(locale)
   const resume = await getResumeByName(`renansui_cv_${locale}`)
 
   return (
