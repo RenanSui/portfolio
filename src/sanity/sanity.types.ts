@@ -171,7 +171,11 @@ export type Projects = {
   _rev: string
   name?: string
   year?: number
-  description?: string
+  descriptions?: Array<{
+    language?: 'en' | 'pt-br'
+    description?: string
+    _key: string
+  }>
   url?: string
   isFavorite?: boolean
 }

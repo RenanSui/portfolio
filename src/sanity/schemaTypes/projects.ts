@@ -18,10 +18,36 @@ export const projects = defineType({
       description: 'The year the project was completed or launched.',
     }),
     defineField({
-      title: 'Project Description',
-      name: 'description',
-      type: 'string',
-      description: 'A detailed description of the project and its purpose.',
+      title: 'Project Descriptions',
+      name: 'descriptions',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              title: 'Language',
+              name: 'language',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'English', value: 'en' },
+                  { title: 'Portuguese (Brazil)', value: 'pt-br' },
+                  // Add more languages as needed
+                ],
+              },
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'Description',
+              name: 'description',
+              type: 'text',
+              description: 'A detailed description of the project in the selected language.',
+            },
+          ],
+        },
+      ],
+      description: 'Project descriptions in multiple languages.',
     }),
     defineField({
       title: 'Project Link/Demo',
