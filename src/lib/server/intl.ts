@@ -18,5 +18,9 @@ export const getMessage = async (locale: string) => {
       title: intl('sections.projects.title') ?? '',
       description: intl('sections.projects.description') ?? '',
     },
+    languages: {
+      title: intl('sections.languages.title') ?? '',
+      description: intl('sections.languages.description') ?? '',
+    },
   }
 }
