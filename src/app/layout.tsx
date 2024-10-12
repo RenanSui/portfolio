@@ -50,7 +50,7 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           'min-h-screen bg-stone-50 font-sans antialiased transition-all dark:bg-stone-950',
