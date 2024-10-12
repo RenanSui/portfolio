@@ -37,3 +37,6 @@ next-env.d.ts
 
 # sanity
 /src/sanity/schema.json
+
+# storybook
+*storybook.log
