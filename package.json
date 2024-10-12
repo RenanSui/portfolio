@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "unlighthouse": "pnpm dlx unlighthouse --site https://renansui.vercel.app/en"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
