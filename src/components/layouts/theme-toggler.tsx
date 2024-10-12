@@ -17,6 +17,7 @@ export const ThemeToggler = () => {
         )}
       >
         <LoaderCircleIcon className="size-5 animate-spin" />
+        <span className="sr-only">Loading Theme Toggler</span>
       </button>
     )
 
@@ -30,6 +31,7 @@ export const ThemeToggler = () => {
         onClick={() => setTheme('dark')}
       >
         <MoonIcon className="size-5" />
+        <span className="sr-only">Dark</span>
       </button>
     )
   }
@@ -44,6 +46,7 @@ export const ThemeToggler = () => {
         onClick={() => setTheme('light')}
       >
         <SunIcon className="size-5" />
+        <span className="sr-only">Light</span>
       </button>
     )
   }
@@ -55,6 +58,7 @@ export const ThemeToggler = () => {
       )}
     >
       <LoaderCircleIcon className="size-5 animate-spin" />
+      <span className="sr-only">Loading Theme Toggler</span>
     </button>
   )
 }
