@@ -3,7 +3,7 @@ import { type Locale } from '@/types'
 import { StarIcon } from 'lucide-react'
 
 type ProjectItemProps = {
-  project: Projects
+  project: Partial<Projects>
   currentLanguage: Locale // Pass the current language as a prop
 }
 

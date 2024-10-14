@@ -174,7 +174,7 @@ export type Projects = {
   descriptions?: Array<{
     language?: 'en' | 'pt-br'
     description?: string
-    _key: string
+    _key?: string
   }>
   url?: string
   isFavorite?: boolean
