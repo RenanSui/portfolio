@@ -10,17 +10,12 @@ import Link from 'next/link'
 
 type LobbyProps = {
   locale: Locale
-  projects: Promise<Projects[]>
-  works: Promise<Works[]>
-  message: ReturnType<typeof getMessage>
+  projects: Partial<Projects>[]
+  works: Partial<Works>[]
+  message: Awaited<ReturnType<typeof getMessage>>
 }
 
-export async function Lobby(props: LobbyProps) {
-  const locale = props.locale
-  const projects = await props.projects
-  const works = await props.works
-  const message = await props.message
-
+export function Lobby({ locale, message, projects, works }: LobbyProps) {
   return (
     <main className="mx-auto flex w-full max-w-[38rem] flex-col gap-16">
       <SiteHeader />
@@ -41,7 +36,7 @@ export async function Lobby(props: LobbyProps) {
       <Section title={message.works.title}>
         <div>
           {works.map((work, index) => (
-            <WorkItem key={index} company={work.company} position={work.position} date={work.workPeriod} />
+            <WorkItem key={index} company={work.company} position={work.position} workPeriod={work.workPeriod} />
           ))}
         </div>
       </Section>

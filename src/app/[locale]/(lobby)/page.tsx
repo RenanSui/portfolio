@@ -7,9 +7,9 @@ import { locales } from '@/config/site'
 
 export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
   setRequestLocale(locale)
-  const projects = getProjects()
-  const works = getWorks()
-  const message = getMessage(locale)
+  const projects = await getProjects()
+  const works = await getWorks()
+  const message = await getMessage(locale)
 
   return <Lobby locale={locale} projects={projects} works={works} message={message} />
 }
