@@ -1,6 +1,9 @@
 import { ProjectItem } from '@/components/project-item'
 import { Section } from '@/components/shells/section'
+import { mocks } from '@/lib/mocks'
 import { type Meta, type StoryObj } from '@storybook/react'
+
+const project = mocks.projects[0]!
 
 const meta = {
   title: 'Components/Project Item',
@@ -11,22 +14,7 @@ const meta = {
     currentLanguage: ['en', 'pt-br'],
   },
   args: {
-    project: {
-      url: 'https://spenso.vercel.app',
-      isFavorite: true,
-      name: 'Spenso',
-      year: 2024,
-      descriptions: [
-        {
-          language: 'en',
-          description: 'Personal finance management tool',
-        },
-        {
-          language: 'pt-br',
-          description: 'Ferramenta de gestão de finanças pessoais',
-        },
-      ],
-    },
+    project: project,
     currentLanguage: 'en',
   },
 } satisfies Meta<typeof ProjectItem>

@@ -1,17 +1,16 @@
 import { Section } from '@/components/shells/section'
 import { WorkItem } from '@/components/work-item'
+import { mocks } from '@/lib/mocks'
 import { type Meta, type StoryObj } from '@storybook/react'
+
+const work = mocks.works[0]!
 
 const meta = {
   title: 'Components/Work Item',
   component: WorkItem,
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
-  args: {
-    company: 'Freelance',
-    position: 'Computer Maintenance',
-    date: 'Jun 2019 - Sep 2021',
-  },
+  args: { ...work },
 } satisfies Meta<typeof WorkItem>
 
 export default meta
