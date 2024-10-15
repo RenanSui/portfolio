@@ -4,10 +4,10 @@ import { Building2Icon } from 'lucide-react'
 type WorkItemProps = {
   company: Works['company']
   position: Works['position']
-  date: Works['workPeriod']
+  workPeriod: Works['workPeriod']
 }
 
-export function WorkItem({ company, date, position }: WorkItemProps) {
+export function WorkItem({ company, workPeriod, position }: WorkItemProps) {
   return (
     <div className="group relative -mx-4 flex cursor-default gap-2 rounded-md border border-transparent px-4 py-3 transition-colors duration-150 ease-in-out hover:border-neutral-200 hover:bg-neutral-100 dark:hover:border-neutral-800 dark:hover:bg-neutral-900 md:items-center">
       <h2 className="sr-only">{company}</h2>
@@ -19,7 +19,7 @@ export function WorkItem({ company, date, position }: WorkItemProps) {
         <div className="flex flex-col gap-1 text-xs md:flex-row md:items-center md:gap-2">
           <p className="text-stone-600 dark:text-stone-400">{position}</p>
           <div className="hidden size-1 rounded-full bg-neutral-600 dark:bg-neutral-400 md:block" />
-          <p className="text-stone-600 dark:text-stone-400">{date}</p>
+          <p className="text-stone-600 dark:text-stone-400">{workPeriod}</p>
         </div>
       </div>
     </div>

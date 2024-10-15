@@ -5,13 +5,7 @@ const config = {
     project: true,
   },
   plugins: ['@typescript-eslint', 'tailwindcss', 'jsx-a11y'],
-  extends: [
-    'next/core-web-vitals',
-    'plugin:@typescript-eslint/recommended-type-checked',
-    'prettier',
-    'plugin:prettier/recommended',
-    'plugin:tailwindcss/recommended',
-  ],
+  extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended-type-checked', 'prettier', 'plugin:prettier/recommended', 'plugin:tailwindcss/recommended', 'plugin:storybook/recommended'],
   rules: {
     'prettier/prettier': [
       'error',
