@@ -15,7 +15,7 @@ const projects = [
         description: 'Ipsum dolor sit lorem, amet consectetur',
       },
     ],
-    url: '/',
+    url: 'https://lorem.com/1',
     isFavorite: true,
   },
   {
@@ -31,7 +31,7 @@ const projects = [
         description: 'Ipsum dolor sit lorem, amet consectetur',
       },
     ],
-    url: '/',
+    url: 'https://lorem.com/2',
     isFavorite: false,
   },
 ] satisfies Partial<Projects>[]

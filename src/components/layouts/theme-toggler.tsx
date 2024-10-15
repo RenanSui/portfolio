@@ -29,6 +29,7 @@ export const ThemeToggler = () => {
           theme === 'light' && 'flex',
         )}
         onClick={() => setTheme('dark')}
+        data-testid="toggle-dark-theme-button"
       >
         <MoonIcon className="size-5" />
         <span className="sr-only">Dark</span>
@@ -44,6 +45,7 @@ export const ThemeToggler = () => {
           theme === 'dark' && 'flex',
         )}
         onClick={() => setTheme('light')}
+        data-testid="toggle-light-theme-button"
       >
         <SunIcon className="size-5" />
         <span className="sr-only">Light</span>
