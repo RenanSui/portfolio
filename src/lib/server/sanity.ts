@@ -84,6 +84,28 @@ export async function getResumeByName(name: string): Promise<Resume | null> {
   }
 }
 
+export type VisitorData = {
+  count: number
+}
+
+const VISITOR_DOC_ID = 'ba6a2127-17a0-4e62-a50f-dd088095a7d2' // ID fixo para o documento
+
+export async function getVisitorsCount() {
+  return await cache(
+    async () => {
+      const query = '*[_type == "visitors" && _id == $id][0]'
+      const visitors = await client.fetch<VisitorData>(query, { id: VISITOR_DOC_ID })
+      return visitors
+    },
+    ['visitors'],
+    { revalidate: 60 * 60, tags: ['visitors'] },
+  )()
+}
+
+export async function incrementVisitorsCount() {
+  await client.patch(VISITOR_DOC_ID).setIfMissing({ count: 0 }).inc({ count: 1 }).commit()
+}
+
 export async function revalidateProjects() {
   revalidateTag('projects')
 }
