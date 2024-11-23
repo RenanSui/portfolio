@@ -2,6 +2,7 @@ import { Icons } from '@/components/icons'
 import { SiteHeader } from '@/components/layouts/site-header'
 import { ProjectItem } from '@/components/project-item'
 import { Section } from '@/components/shells/section'
+import { Visitors } from '@/components/visitors'
 import { WorkItem } from '@/components/work-item'
 import { type getMessage } from '@/lib/server/intl'
 import { type Projects, type Works } from '@/sanity/sanity.types'
@@ -49,16 +50,19 @@ export function Lobby({ locale, message, projects, works }: LobbyProps) {
         </div>
       </Section>
 
-      <Section title={message.languages.title}>
-        <div className="flex flex-col gap-1 text-sm text-stone-600 dark:text-stone-400">
-          <Link href="en" className="w-fit transition-all hover:text-stone-900 dark:hover:text-stone-100">
-            English
-          </Link>
-          <Link href="pt-br" className="w-fit transition-all hover:text-stone-900 dark:hover:text-stone-100">
-            Portuguese
-          </Link>
-        </div>
-      </Section>
+      <div className="flex justify-between">
+        <Section title={message.languages.title}>
+          <div className="flex flex-col gap-1 text-sm text-stone-600 dark:text-stone-400">
+            <Link href="en" className="w-fit transition-all hover:text-stone-900 dark:hover:text-stone-100">
+              English
+            </Link>
+            <Link href="pt-br" className="w-fit transition-all hover:text-stone-900 dark:hover:text-stone-100">
+              Portuguese
+            </Link>
+          </div>
+        </Section>
+        <Visitors message={message} />
+      </div>
     </main>
   )
 }

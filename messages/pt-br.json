@@ -18,6 +18,10 @@
       "languages": {
         "title": "Idiomas",
         "description": ""
+      },
+      "visitors": {
+        "title": "Visitantes",
+        "description": ""
       }
     }
   }

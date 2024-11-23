@@ -71,6 +71,10 @@ const message = {
     title: 'Lorem',
     description: '',
   },
+  visitors: {
+    title: 'Lorem',
+    description: '',
+  },
 } satisfies Awaited<ReturnType<typeof getMessage>>
 
 export const mocks = { projects, works, message }
