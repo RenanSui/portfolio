@@ -35,16 +35,6 @@ export const Visitors = ({ message }: VisitorsProps) => {
     void loadVisitors()
   }, [])
 
-  // React.useEffect(() => {
-  //   const loadVisitors = async () => {
-  //     const visited = document.cookie.split('; ').find((row) => row.startsWith('visited='))
-  //     const cookieHeader = visited ? `visited=${visited.split('=')[1]}` : undefined
-  //     const visitors = await getVisitors(cookieHeader)
-  //     setVisitors(visitors.count)
-  //   }
-  //   void loadVisitors()
-  // }, [])
-
   return (
     <Section title={message.visitors.title}>
       <div className="flex flex-col gap-1 text-sm text-stone-600 dark:text-stone-400">
