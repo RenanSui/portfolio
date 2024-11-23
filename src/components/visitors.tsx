@@ -1,12 +1,16 @@
 'use client'
 
 import { type getMessage } from '@/lib/server/intl'
-import { getVisitors } from '@/lib/server/visitors'
+import { getVisitorsCount, incrementVisitorsCount } from '@/lib/server/sanity'
 import * as React from 'react'
 import { Section } from './shells/section'
 
 type VisitorsProps = {
   message: Awaited<ReturnType<typeof getMessage>>
+}
+
+export type VisitorData = {
+  count: number
 }
 
 export const Visitors = ({ message }: VisitorsProps) => {
@@ -15,12 +19,31 @@ export const Visitors = ({ message }: VisitorsProps) => {
   React.useEffect(() => {
     const loadVisitors = async () => {
       const visited = document.cookie.split('; ').find((row) => row.startsWith('visited='))
-      const cookieHeader = visited ? `visited=${visited.split('=')[1]}` : undefined
-      const visitors = await getVisitors(cookieHeader)
+
+      if (!visited) {
+        await incrementVisitorsCount()
+
+        const date = new Date()
+        date.setFullYear(date.getFullYear() + 1)
+        document.cookie = `visited=true; path=/; expires=${date.toUTCString()};`
+      }
+
+      const visitors = await getVisitorsCount()
       setVisitors(visitors.count)
     }
+
     void loadVisitors()
   }, [])
+
+  // React.useEffect(() => {
+  //   const loadVisitors = async () => {
+  //     const visited = document.cookie.split('; ').find((row) => row.startsWith('visited='))
+  //     const cookieHeader = visited ? `visited=${visited.split('=')[1]}` : undefined
+  //     const visitors = await getVisitors(cookieHeader)
+  //     setVisitors(visitors.count)
+  //   }
+  //   void loadVisitors()
+  // }, [])
 
   return (
     <Section title={message.visitors.title}>
